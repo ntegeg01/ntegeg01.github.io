@@ -44,7 +44,6 @@ a img {
   display: inline-block;
   margin: 10px;
 }
-
 /* Optional: Box styling if you’re doing the color-box project */
 .color-grid {
   display: flex;
@@ -52,7 +51,6 @@ a img {
   gap: 15px;
   margin-top: 30px;
 }
-
 .color-box {
   width: 100px;
   height: 100px;
