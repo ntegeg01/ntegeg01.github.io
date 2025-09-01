@@ -38,6 +38,19 @@ a img {
   display: inline-block;
   margin: 10px;
 }
+/* Optional: Box styling if you’re doing the color-box project */
+.color-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+.color-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
 /* Images */
 img {
   display: block;
@@ -45,4 +58,3 @@ img {
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
