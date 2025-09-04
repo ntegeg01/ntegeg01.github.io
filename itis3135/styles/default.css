@@ -7,11 +7,13 @@ body {
   padding: 20px;
   line-height: 1.6;
 }
+
 /* Headings */
 h1, h2 {
   text-align: center;
   color: #222;
 }
+
 /* Navigation Bar */
 nav {
   text-align: center;
@@ -27,17 +29,30 @@ nav a:hover {
   color: #ff6600; /* tiger orange on hover */
   text-decoration: underline;
 }
+
+/* Main content container */
+.intro-container {
+  max-width: 800px;      /* keeps text from being too wide */
+  margin: 0 auto;        /* centers content block */
+  text-align: left;      /* keeps paragraphs left-aligned */
+  padding: 20px;
+}
+
+/* Paragraphs */
+.intro-container p {
+  text-align: left;      /* fix alignment issue */
+  margin-bottom: 15px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
 /* Footer */
-p {
+footer {
   text-align: center;
-  margin-top: 30px;
   font-size: 0.9em;
+  margin-top: 30px;
 }
-/* Validation Badges */
-a img {
-  display: inline-block;
-  margin: 10px;
-}
+
 /* Images */
 img {
   display: block;
@@ -46,3 +61,14 @@ img {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Figure + Caption */
+figure {
+  text-align: center;
+  margin: 20px auto;
+}
+figcaption {
+  font-size: 0.9em;
+  color: #555;
+  font-style: italic;
+  margin-top: 8px;
+}
