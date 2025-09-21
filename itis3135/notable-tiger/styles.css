@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefcf7;
+    color: #333;
+  }
+  
+  /* Header & Footer */
+  header, footer {
+    background-color: #f58220; /* Tiger orange */
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  header h1, footer p {
+    margin: 0.3em 0;
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content */
+  main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1.5em;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    color: #f58220;
+    border-bottom: 2px solid #f58220;
+    padding-bottom: 0.3em;
+  }
+  
