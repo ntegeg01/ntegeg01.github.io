@@ -1,0 +1,28 @@
+body {
+    background-color: #F4F4F4;
+    color: #264653;
+  }
+  
+  header {
+    background: #2A9D8F;
+    color: white;
+  }
+  
+  h2 {
+    color: #E76F51;
+  }
+  
+  ul {
+    color: #2A9D8F;
+  }
+  
+  address {
+    background: #E9C46A;
+    border-left: 5px solid #F4A261;
+  }
+  
+  footer {
+    background: #264653;
+    color: white;
+  }
+  
