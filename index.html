@@ -9,43 +9,86 @@
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       color: #222;
-      margin: 0 auto;
-      width: 90%;
-      max-width: 900px;
+      margin: 0;
       line-height: 1.6;
     }
+
     header, footer {
       background-color: #004466;
       color: white;
       padding: 1rem;
       text-align: center;
     }
+
     h1 {
       font-family: "Trebuchet MS", sans-serif;
       margin: 0;
       font-size: 2rem;
     }
+
     main {
+      background-color: #fff;
       padding: 1.5rem;
+      width: 90%;           /*  percentage width */
+      max-width: 900px;     /* max-width for readability */
+      margin: 0 auto;       /*  centers the layout */
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
+
     h2 {
       font-family: Georgia, serif;
       color: #004466;
       margin-bottom: 0.5rem;
     }
+
     p {
       margin-bottom: 1rem;
     }
+
     footer nav a {
       color: white;
       text-decoration: none;
       margin: 0 0.5rem;
     }
+
     footer nav a:hover {
       text-decoration: underline;
     }
+
     footer {
       font-size: 0.9rem;
+    }
+
+    /* Responsive Design Rules*/
+
+    /*Tablet Devices (601px–980px) */
+    @media screen and (min-width: 601px) and (max-width: 980px) {
+      main {
+        width: 95%;
+        max-width: 800px;
+      }
+      header, footer {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Mobile Devices (up to 600px) */
+    @media screen and (max-width: 600px) {
+      header, footer {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+      main {
+        width: 98%;
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
     }
   </style>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
