@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Beautiful Game</title>
@@ -105,7 +104,7 @@
       transform: translateY(-1px);
     }
 
-    .nav-link.active {
+    .nav-link.is-active {
       color: #061018;
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
       box-shadow: 0 8px 20px rgba(12,14,20,0.6);
@@ -124,7 +123,7 @@
       box-shadow: 0 10px 30px rgba(2,6,23,0.6);
     }
 
-    section.active {
+    section.is-active {
       display: block;
     }
 
@@ -205,9 +204,11 @@
       border: 1px solid rgba(255,255,255,0.03);
     }
 
-    .card h3 {
+    .card-title {
       margin-top: 0;
       color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 600;
     }
 
     .image-gallery {
@@ -301,7 +302,7 @@
       gap: 0.5rem;
     }
 
-    @media(max-width:768px) {
+    @media (max-width: 768px) {
       .intro-content, .two-column {
         grid-template-columns: 1fr;
       }
@@ -317,7 +318,7 @@
   <header>
     <h1><span class="logo">⚽</span> The Beautiful Game</h1>
     <nav aria-label="Primary" id="primary-nav">
-      <button class="nav-link active" data-target="what">What</button>
+      <button class="nav-link is-active" data-target="what">What</button>
       <button class="nav-link" data-target="who">Who</button>
       <button class="nav-link" data-target="when">When</button>
       <button class="nav-link" data-target="where">Where</button>
@@ -328,10 +329,10 @@
 
   <main>
     <!-- WHAT -->
-    <section id="what" class="active">
+    <section id="what" class="is-active">
       <div class="intro-section">
-        <h1 class="intro-title">What — Football as a Hobby</h1>
-        <h2 class="intro-subtitle">The Ultimate Team Sport</h2>
+        <h2 class="intro-title">What — Football as a Hobby</h2>
+        <h3 class="intro-subtitle">The Ultimate Team Sport</h3>
         <div class="intro-content">
           <div class="intro-text">
             <p>Football is more than a game; it challenges the body, mind, and spirit. Played casually or competitively, it offers excitement, fitness, and strategic thinking, making it a fulfilling hobby for all ages.</p>
@@ -349,26 +350,29 @@
         <figure class="gallery-item">
           <img src="images/football-action.jpg" alt="Players in action during a competitive match" class="gallery-image" />
           <figcaption>Players in action during a competitive match</figcaption>
+          
         </figure>
         <figure class="gallery-item">
           <img src="images/team-celebration.jpg" alt="Team celebrating a goal together" class="gallery-image" />
           <figcaption>Celebrating a goal with teammates</figcaption>
+         
         </figure>
         <figure class="gallery-item">
           <img src="images/skill-training.jpg" alt="Practicing ball control and dribbling techniques" class="gallery-image" />
           <figcaption>Practicing ball control and dribbling techniques</figcaption>
+        
         </figure>
       </div>
     </section>
 
     <!-- WHO -->
     <section id="who">
-      <h1 class="intro-title">Who — Players & Community</h1>
-      <h2 class="intro-subtitle">The Football Family</h2>
+      <h2 class="intro-title">Who — Players & Community</h2>
+      <h3 class="intro-subtitle">The Football Family</h3>
       <div class="two-column">
         <div>
           <div class="card">
-            <h3>Players</h3>
+            <div class="card-title">Players</div>
             <p>Football enthusiasts range from casual weekend players to competitive amateurs. The sport welcomes all skill levels and encourages learning through play.</p>
             <p>From children learning fundamentals to seasoned veterans sharing wisdom, football creates bonds across generations and backgrounds.</p>
           </div>
@@ -381,15 +385,16 @@
         <figure>
           <img src="images/football-community.jpg" alt="Diverse football community playing together" class="column-image" />
           <figcaption>Football brings together people from all walks of life</figcaption>
+         
         </figure>
       </div>
       <div class="grid" style="margin-top:2rem;">
         <div class="card">
-          <h3>Coaches & Mentors</h3>
+          <div class="card-title">Coaches & Mentors</div>
           <p>Experienced players who guide newcomers, develop strategies, and foster team cohesion through shared knowledge and encouragement.</p>
         </div>
         <div class="card">
-          <h3>Supporters & Fans</h3>
+          <div class="card-title">Supporters & Fans</div>
           <p>The passionate community that cheers from sidelines, organizes events, and creates the vibrant atmosphere that makes football special.</p>
         </div>
       </div>
@@ -397,16 +402,16 @@
 
     <!-- WHEN -->
     <section id="when">
-      <h1 class="intro-title">When — Best Times to Play</h1>
-      <h2 class="intro-subtitle">Timing Your Football Experience</h2>
+      <h2 class="intro-title">When — Best Times to Play</h2>
+      <h3 class="intro-subtitle">Timing Your Football Experience</h3>
       <div class="two-column">
         <div>
           <div class="card">
-            <h3>Practice Sessions</h3>
+            <div class="card-title">Practice Sessions</div>
             <p>Evenings or weekends are ideal for casual matches, allowing players to enjoy the game without rush or fatigue. Early mornings offer cooler temperatures for intensive training.</p>
           </div>
           <div class="card">
-            <h3>Competitive Matches</h3>
+            <div class="card-title">Competitive Matches</div>
             <p>Local leagues and tournaments usually take place on weekends or after-work hours, offering structured play for enthusiasts of all commitment levels.</p>
           </div>
           <div class="status-indicators" style="margin-top:1rem;">
@@ -418,24 +423,27 @@
         <figure>
           <img src="images/weekend-match.jpg" alt="Weekend football match in progress" class="column-image" />
           <figcaption>Weekend matches bring communities together</figcaption>
+          
         </figure>
       </div>
       <div class="image-gallery">
         <figure class="gallery-item">
           <img src="images/evening-training.jpg" alt="Evening football training session" class="gallery-image" />
           <figcaption>Post-work practice sessions under the lights</figcaption>
+         
         </figure>
         <figure class="gallery-item">
           <img src="images/morning-practice.jpg" alt="Early morning football practice" class="gallery-image" />
           <figcaption>Early morning practice sessions</figcaption>
+        
         </figure>
       </div>
     </section>
 
     <!-- WHERE -->
     <section id="where">
-      <h1 class="intro-title">Where — Playing & Watching</h1>
-      <h2 class="intro-subtitle">Football Venues & Spaces</h2>
+      <h2 class="intro-title">Where — Playing & Watching</h2>
+      <h3 class="intro-subtitle">Football Venues & Spaces</h3>
       <div class="intro-content">
         <div class="intro-text">
           <p>Football can be enjoyed in various settings, from informal pitches to professional stadiums. Each environment offers a unique experience tailored to different aspects of the game.</p>
@@ -449,15 +457,15 @@
       </div>
       <div class="grid" style="margin-top:2rem;">
         <div class="card">
-          <h3>Fields & Parks</h3>
+          <div class="card-title">Fields & Parks</div>
           <p>Community parks, school fields, and open spaces are perfect for casual games and practice sessions. These accessible locations make football available to everyone.</p>
         </div>
         <div class="card">
-          <h3>Stadiums & Clubs</h3>
+          <div class="card-title">Stadiums & Clubs</div>
           <p>Joining clubs or watching matches at stadiums provides a structured environment and a chance to engage with the football community at a higher level.</p>
         </div>
         <div class="card">
-          <h3>Indoor Facilities</h3>
+          <div class="card-title">Indoor Facilities</div>
           <p>For year-round play regardless of weather, indoor pitches offer consistent conditions and opportunities for futsal and small-sided games.</p>
         </div>
       </div>
@@ -465,23 +473,25 @@
         <figure class="gallery-item">
           <img src="images/community-pitch.jpg" alt="Local community football pitch" class="gallery-image" />
           <figcaption>Local fields available for casual play</figcaption>
-          
+         
         </figure>
         <figure class="gallery-item">
           <img src="images/professional-stadium.jpg" alt="Professional football stadium" class="gallery-image" />
           <figcaption>Watching elite football in modern arenas</figcaption>
+         
         </figure>
         <figure class="gallery-item">
           <img src="images/indoor-facility.jpg" alt="Indoor football facility" class="gallery-image" />
           <figcaption>Indoor facilities for year-round play</figcaption>
+         
         </figure>
       </div>
     </section>
 
     <!-- HOW -->
     <section id="how">
-      <h1 class="intro-title">How — Getting Started</h1>
-      <h2 class="intro-subtitle">Your Football Journey Begins Here</h2>
+      <h2 class="intro-title">How — Getting Started</h2>
+      <h3 class="intro-subtitle">Your Football Journey Begins Here</h3>
       <div class="intro-content">
         <div class="intro-text">
           <p>Beginning your football journey requires minimal equipment but maximum enthusiasm. The path from casual play to joining local clubs is straightforward and accessible.</p>
@@ -495,15 +505,15 @@
       </div>
       <div class="grid" style="margin-top:2rem;">
         <div class="card">
-          <h3>Learn Skills</h3>
+          <div class="card-title">Learn Skills</div>
           <p>Start with fundamental techniques and gradually move to more complex skills, always emphasizing precision and teamwork.</p>
         </div>
         <div class="card">
-          <h3>Engage Locally</h3>
+          <div class="card-title">Engage Locally</div>
           <p>Participate in community leagues, meet fellow enthusiasts, and gain practical match experience while building friendships.</p>
         </div>
         <div class="card">
-          <h3>Enjoy the Game</h3>
+          <div class="card-title">Enjoy the Game</div>
           <p>Remember, football is ultimately about enjoyment, growth, and connection. Keep the love for the game at the center of your experience.</p>
         </div>
       </div>
@@ -521,8 +531,8 @@
 
     <!-- WHY -->
     <section id="why">
-      <h1 class="intro-title">Why — Benefits of Football</h1>
-      <h2 class="intro-subtitle">More Than Just a Game</h2>
+      <h2 class="intro-title">Why — Benefits of Football</h2>
+      <h3 class="intro-subtitle">More Than Just a Game</h3>
       <div class="intro-content">
         <div class="intro-text">
           <p>Football develops physical fitness, teamwork, strategic thinking, and social connection. Engaging in the sport promotes mental and physical health while fostering lifelong friendships.</p>
@@ -549,7 +559,6 @@
         </figure>
       </div>
     </section>
-
   </main>
 
   <footer>
@@ -564,12 +573,12 @@
 
 <script>
   const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-  navLinks.forEach(btn => {
+  navLinks.forEach((btn) => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
-      document.getElementById(btn.dataset.target).classList.add('active');
-      navLinks.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      document.querySelectorAll('main section').forEach((s) => s.classList.remove('is-active'));
+      document.getElementById(btn.dataset.target).classList.add('is-active');
+      navLinks.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
     });
   });
 </script>
