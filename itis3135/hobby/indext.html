@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Beautiful Game</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #0f1720;
+      --muted: #93a3b6;
+      --accent: #6ee7b7;
+      --accent-2: #7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --maxw: 1100px;
+      --nav-gap: 1rem;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: linear-gradient(180deg, #04060a 0%, var(--bg) 60%);
+      color: #e6eef6;
+      line-height: 1.45;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header, main, footer {
+      display: block;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 2rem auto;
+      padding: 1.25rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      background: linear-gradient(90deg, rgba(124,92,255,0.08), rgba(110,231,183,0.02));
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: 0.6px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    header h1 .logo {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 10px;
+      color: #061018;
+      font-weight: 800;
+      font-size: 1.05rem;
+      box-shadow: 0 6px 18px rgba(124,92,255,0.12), inset 0 -4px 8px rgba(255,255,255,0.06);
+    }
+
+    nav {
+      display: flex;
+      gap: var(--nav-gap);
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .nav-link {
+      padding: 8px 12px;
+      border-radius: 10px;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      cursor: pointer;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      color: #061018;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 8px 20px rgba(12,14,20,0.6);
+    }
+
+    main {
+      margin-top: 1rem;
+    }
+
+    section {
+      display: none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding: 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #dffcf4;
+      letter-spacing: 0.2px;
+    }
+
+    .intro-section {
+      margin-bottom: 2rem;
+    }
+
+    .intro-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .intro-subtitle {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .intro-text {
+      line-height: 1.6;
+    }
+
+    .intro-text p {
+      margin-bottom: 1rem;
+    }
+
+    .status-indicators {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 0.8rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 10px;
+      min-height: 70px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(2,6,23,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    }
+
+    .gallery-caption {
+      padding: 1rem;
+      background: var(--card);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .column-image {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      border-radius: 10px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    figure {
+      margin: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(2,6,23,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    figure:hover {
+      transform: translateY(-5px);
+    }
+
+    figcaption {
+      padding: 1rem;
+      background: var(--card);
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .ai-prompt {
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 0 0 10px 10px;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    @media(max-width:768px) {
+      .intro-content, .two-column {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="logo">⚽</span> The Beautiful Game</h1>
+    <nav aria-label="Primary" id="primary-nav">
+      <button class="nav-link active" data-target="what">What</button>
+      <button class="nav-link" data-target="who">Who</button>
+      <button class="nav-link" data-target="when">When</button>
+      <button class="nav-link" data-target="where">Where</button>
+      <button class="nav-link" data-target="how">How</button>
+      <button class="nav-link" data-target="why">Why</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- WHAT -->
+    <section id="what" class="active">
+      <div class="intro-section">
+        <h1 class="intro-title">What — Football as a Hobby</h1>
+        <h2 class="intro-subtitle">The Ultimate Team Sport</h2>
+        <div class="intro-content">
+          <div class="intro-text">
+            <p>Football is more than a game; it challenges the body, mind, and spirit. Played casually or competitively, it offers excitement, fitness, and strategic thinking, making it a fulfilling hobby for all ages.</p>
+            <p>Football isn't just about physical prowess—it's about teamwork, strategic thinking, and pushing your limits. Every match presents unique challenges that require players to analyze formations, make split-second decisions, and trust their teammates while competing on the pitch.</p>
+          </div>
+          <div class="status-indicators">
+            <div class="status-indicator"><div class="status-dot"></div>Physical Challenge</div>
+            <div class="status-indicator"><div class="status-dot"></div>Mental Focus</div>
+            <div class="status-indicator"><div class="status-dot"></div>Team Strategy</div>
+            <div class="status-indicator"><div class="status-dot"></div>Skill Development</div>
+          </div>
+        </div>
+      </div>
+      <div class="image-gallery">
+        <figure class="gallery-item">
+          <img src="images/football-action.jpg" alt="Players in action during a competitive match" class="gallery-image" />
+          <figcaption>Players in action during a competitive match</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/team-celebration.jpg" alt="Team celebrating a goal together" class="gallery-image" />
+          <figcaption>Celebrating a goal with teammates</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/skill-training.jpg" alt="Practicing ball control and dribbling techniques" class="gallery-image" />
+          <figcaption>Practicing ball control and dribbling techniques</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- WHO -->
+    <section id="who">
+      <h1 class="intro-title">Who — Players & Community</h1>
+      <h2 class="intro-subtitle">The Football Family</h2>
+      <div class="two-column">
+        <div>
+          <div class="card">
+            <h3>Players</h3>
+            <p>Football enthusiasts range from casual weekend players to competitive amateurs. The sport welcomes all skill levels and encourages learning through play.</p>
+            <p>From children learning fundamentals to seasoned veterans sharing wisdom, football creates bonds across generations and backgrounds.</p>
+          </div>
+          <div class="status-indicators" style="margin-top:1rem;">
+            <div class="status-indicator"><div class="status-dot"></div>All Ages Welcome</div>
+            <div class="status-indicator"><div class="status-dot"></div>Skill Diversity</div>
+            <div class="status-indicator"><div class="status-dot"></div>Community Focus</div>
+          </div>
+        </div>
+        <figure>
+          <img src="images/football-community.jpg" alt="Diverse football community playing together" class="column-image" />
+          <figcaption>Football brings together people from all walks of life</figcaption>
+        </figure>
+      </div>
+      <div class="grid" style="margin-top:2rem;">
+        <div class="card">
+          <h3>Coaches & Mentors</h3>
+          <p>Experienced players who guide newcomers, develop strategies, and foster team cohesion through shared knowledge and encouragement.</p>
+        </div>
+        <div class="card">
+          <h3>Supporters & Fans</h3>
+          <p>The passionate community that cheers from sidelines, organizes events, and creates the vibrant atmosphere that makes football special.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN -->
+    <section id="when">
+      <h1 class="intro-title">When — Best Times to Play</h1>
+      <h2 class="intro-subtitle">Timing Your Football Experience</h2>
+      <div class="two-column">
+        <div>
+          <div class="card">
+            <h3>Practice Sessions</h3>
+            <p>Evenings or weekends are ideal for casual matches, allowing players to enjoy the game without rush or fatigue. Early mornings offer cooler temperatures for intensive training.</p>
+          </div>
+          <div class="card">
+            <h3>Competitive Matches</h3>
+            <p>Local leagues and tournaments usually take place on weekends or after-work hours, offering structured play for enthusiasts of all commitment levels.</p>
+          </div>
+          <div class="status-indicators" style="margin-top:1rem;">
+            <div class="status-indicator"><div class="status-dot"></div>Weekend Leagues</div>
+            <div class="status-indicator"><div class="status-dot"></div>Evening Practice</div>
+            <div class="status-indicator"><div class="status-dot"></div>Seasonal Tournaments</div>
+          </div>
+        </div>
+        <figure>
+          <img src="images/weekend-match.jpg" alt="Weekend football match in progress" class="column-image" />
+          <figcaption>Weekend matches bring communities together</figcaption>
+        </figure>
+      </div>
+      <div class="image-gallery">
+        <figure class="gallery-item">
+          <img src="images/evening-training.jpg" alt="Evening football training session" class="gallery-image" />
+          <figcaption>Post-work practice sessions under the lights</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/morning-practice.jpg" alt="Early morning football practice" class="gallery-image" />
+          <figcaption>Early morning practice sessions</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- WHERE -->
+    <section id="where">
+      <h1 class="intro-title">Where — Playing & Watching</h1>
+      <h2 class="intro-subtitle">Football Venues & Spaces</h2>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p>Football can be enjoyed in various settings, from informal pitches to professional stadiums. Each environment offers a unique experience tailored to different aspects of the game.</p>
+          <p>Whether you're playing a casual match with friends or watching professionals compete, the location shapes your football experience and connects you with the broader community.</p>
+        </div>
+        <div class="status-indicators">
+          <div class="status-indicator"><div class="status-dot"></div>Local Parks</div>
+          <div class="status-indicator"><div class="status-dot"></div>Community Fields</div>
+          <div class="status-indicator"><div class="status-dot"></div>Professional Stadiums</div>
+        </div>
+      </div>
+      <div class="grid" style="margin-top:2rem;">
+        <div class="card">
+          <h3>Fields & Parks</h3>
+          <p>Community parks, school fields, and open spaces are perfect for casual games and practice sessions. These accessible locations make football available to everyone.</p>
+        </div>
+        <div class="card">
+          <h3>Stadiums & Clubs</h3>
+          <p>Joining clubs or watching matches at stadiums provides a structured environment and a chance to engage with the football community at a higher level.</p>
+        </div>
+        <div class="card">
+          <h3>Indoor Facilities</h3>
+          <p>For year-round play regardless of weather, indoor pitches offer consistent conditions and opportunities for futsal and small-sided games.</p>
+        </div>
+      </div>
+      <div class="image-gallery">
+        <figure class="gallery-item">
+          <img src="images/community-pitch.jpg" alt="Local community football pitch" class="gallery-image" />
+          <figcaption>Local fields available for casual play</figcaption>
+          
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/professional-stadium.jpg" alt="Professional football stadium" class="gallery-image" />
+          <figcaption>Watching elite football in modern arenas</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/indoor-facility.jpg" alt="Indoor football facility" class="gallery-image" />
+          <figcaption>Indoor facilities for year-round play</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how">
+      <h1 class="intro-title">How — Getting Started</h1>
+      <h2 class="intro-subtitle">Your Football Journey Begins Here</h2>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p>Beginning your football journey requires minimal equipment but maximum enthusiasm. The path from casual play to joining local clubs is straightforward and accessible.</p>
+          <p>Focus on learning basic skills: passing, dribbling, shooting, and teamwork. Attend practices, play regularly, and seek mentorship from experienced players to improve rapidly.</p>
+        </div>
+        <div class="status-indicators">
+          <div class="status-indicator"><div class="status-dot"></div>Basic Gear Needed</div>
+          <div class="status-indicator"><div class="status-dot"></div>Join Local Clubs</div>
+          <div class="status-indicator"><div class="status-dot"></div>Practice Consistently</div>
+        </div>
+      </div>
+      <div class="grid" style="margin-top:2rem;">
+        <div class="card">
+          <h3>Learn Skills</h3>
+          <p>Start with fundamental techniques and gradually move to more complex skills, always emphasizing precision and teamwork.</p>
+        </div>
+        <div class="card">
+          <h3>Engage Locally</h3>
+          <p>Participate in community leagues, meet fellow enthusiasts, and gain practical match experience while building friendships.</p>
+        </div>
+        <div class="card">
+          <h3>Enjoy the Game</h3>
+          <p>Remember, football is ultimately about enjoyment, growth, and connection. Keep the love for the game at the center of your experience.</p>
+        </div>
+      </div>
+      <div class="image-gallery">
+        <figure class="gallery-item">
+          <img src="images/basic-gear.jpg" alt="Basic football equipment" class="gallery-image" />
+          <figcaption>Essential gear to get started</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/skill-drills.jpg" alt="Football skill drills" class="gallery-image" />
+          <figcaption>Practicing fundamental skills</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <h1 class="intro-title">Why — Benefits of Football</h1>
+      <h2 class="intro-subtitle">More Than Just a Game</h2>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p>Football develops physical fitness, teamwork, strategic thinking, and social connection. Engaging in the sport promotes mental and physical health while fostering lifelong friendships.</p>
+          <p>Whether for recreation, fitness, or competition, football offers opportunities to challenge yourself, set goals, and celebrate achievements, making it one of the most rewarding hobbies.</p>
+        </div>
+        <div class="status-indicators">
+          <div class="status-indicator"><div class="status-dot"></div>Fitness & Health</div>
+          <div class="status-indicator"><div class="status-dot"></div>Teamwork Skills</div>
+          <div class="status-indicator"><div class="status-dot"></div>Community Engagement</div>
+        </div>
+      </div>
+      <div class="image-gallery">
+        <figure class="gallery-item">
+          <img src="images/teamwork-benefit.jpg" alt="Teamwork in football" class="gallery-image" />
+          <figcaption>Building coordination and trust on the field</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/fitness-benefit.jpg" alt="Physical fitness benefits" class="gallery-image" />
+          <figcaption>Enhancing strength, agility, and endurance</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/community-benefit.jpg" alt="Football community benefits" class="gallery-image" />
+          <figcaption>Connecting with a global network of football enthusiasts</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://validator.w3.org/check?uri=referer" target="_blank">HTML Validator</a> | 
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">CSS Validator</a> |
+      <a href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/UNCCID/itis3135/hobby/" target="_blank">Accessibility Validator</a>
+    </p>
+    <p>Designed by <a href="https://nebiyu-designs/index.html">Nebiyu Designs</a> &copy; 2025</p>
+  </footer>
+</div>
+
+<script>
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  navLinks.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
+      document.getElementById(btn.dataset.target).classList.add('active');
+      navLinks.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+
