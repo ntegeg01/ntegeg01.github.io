@@ -1,151 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This script is used for linting the HTML code. Ensure it is from a trusted source. -->
-    <script src="https://trusted-source.com/script.js" crossorigin="anonymous"></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction Form</title>
-  <link rel="stylesheet" href="styles/default.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="styles/default.css" />
 </head>
 <body>
-  <header id="header"></header>
+    <header id="header"></header>
 
-  <main>
-    <h2>Introduction Form</h2>
-    <h3>Please submit the form below.</h3>
+    <main>
+        <h2>Introduction Form</h2>
+        <h3>Please submit the form below.</h3>
 
-    <form id="introForm">
-      <fieldset>
-        <legend>Basic Information</legend>
-        <label>First Name*:
-          <input type="text" name="firstName" value="John" placeholder="Enter first name" required>
-        </label><br>
-        <label>Middle Name / Initial:
-          <input type="text" name="middleName" placeholder="Enter middle name">
-        </label><br>
-        <label>Preferred/Nickname:
-          <input type="text" name="nickname" placeholder="Enter nickname">
-        </label><br>
-        <label>Last Name*:
-          <input type="text" name="lastName" value="Doe" placeholder="Enter last name" required>
-        </label><br>
-        <label>Acknowledgment Statement*:
-          <input type="text" name="ackStatement" value="I certify that this is my own work." required>
-        </label><br>
-        <label>Acknowledgment Date*:
-          <input type="date" name="ackDate" required>
-        </label>
-      </fieldset>
+        <form id="introForm">
+            <fieldset>
+                <legend>Basic Information</legend>
+                <label>First Name*:
+                    <input type="text" name="firstName" value="John" placeholder="Enter first name" required>
+                </label><br>
+                <label>Middle Name / Initial:
+                    <input type="text" name="middleName" placeholder="Enter middle name">
+                </label><br>
+                <label>Preferred/Nickname:
+                    <input type="text" name="nickname" placeholder="Enter nickname">
+                </label><br>
+                <label>Last Name*:
+                    <input type="text" name="lastName" value="Doe" placeholder="Enter last name" required>
+                </label><br>
+                <label>Acknowledgment Statement*:
+                    <input type="text" name="ackStatement" value="I certify that this is my own work." required>
+                </label><br>
+                <label>Acknowledgment Date*:
+                    <input type="date" name="ackDate" value="2025-10-25" required>
+                </label>
+            </fieldset>
 
-      <fieldset>
-        <legend>Mascot and Theme</legend>
-        <label>Mascot Adjective*:
-          <input type="text" name="mascotAdj" value="Clever" placeholder="Adjective" required>
-        </label><br>
-        <label>Mascot Animal*:
-          <input type="text" name="mascotAnimal" value="Fox" placeholder="Animal" required>
-        </label><br>
-        <label>Divider Symbol:
-          <input type="text" name="divider" value="~" placeholder="~ or ♥ etc">
-        </label>
-      </fieldset>
+            <fieldset>
+                <legend>Mascot and Theme</legend>
+                <label>Mascot Adjective*:
+                    <input type="text" name="mascotAdj" value="Clever" placeholder="Adjective" required>
+                </label><br>
+                <label>Mascot Animal*:
+                    <input type="text" name="mascotAnimal" value="Fox" placeholder="Animal" required>
+                </label><br>
+                <label>Divider Symbol:
+                    <input type="text" name="divider" value="~" placeholder="~ or ♥ etc">
+                </label>
+            </fieldset>
 
-      <fieldset>
-        <legend>Image</legend>
-        <label>Picture:
-          <input type="file" name="picture" accept="image/*">
-        </label><br>
-        <label>Picture Caption:
-          <input type="text" name="caption" value="John Doe enjoying a sunny day" placeholder="Enter caption">
-        </label>
-      </fieldset>
+            <fieldset>
+                <legend>Image</legend>
+                <label>Picture:
+                    <input type="file" name="picture" accept="image/*">
+                </label><br>
+                <label>Picture Caption:
+                    <input type="text" name="caption" value="John Doe enjoying a sunny day" placeholder="Enter caption">
+                </label>
+            </fieldset>
 
-      <fieldset>
-        <legend>Personal Statement</legend>
-        <textarea name="personalStatement" rows="4" required></textarea>
-      </fieldset>
+            <fieldset>
+                <legend>Personal Statement</legend>
+                <textarea name="personalStatement" rows="4" required>I am a Computer Science major who enjoys learning about web development and UI design.</textarea>
+            </fieldset>
 
-      <fieldset>
-        <legend>Main Bullet Points</legend>
-        <label>Personal Background:
-          <input type="text" name="bullet1" value="Originally from Charlotte, NC" required>
-        </label><br>
-        <label>Professional Background:
-          <input type="text" name="bullet2" value="Worked as an intern in software development" required>
-        </label><br>
-        <label>Academic Background:
-          <input type="text" name="bullet3" value="Junior pursuing BS in Computer Science" required>
-        </label><br>
-        <label>Background in this Subject:
-          <input type="text" name="bullet4" value="Took courses in HTML, CSS, and JavaScript" required>
-        </label><br>
-        <label>Primary Computer Platform:
-          <input type="text" name="bullet5" value="Windows 11" required>
-        </label><br>
-        <label>Courses Currently Taking:</label>
-      </fieldset>
-      <div id="courses">
-        <div class="course">
-            <input type="text" name="courseDept" value="Department" placeholder="Dept" required>
-            <input type="text" name="courseNum" value="3135" placeholder="Number" required>
-            <input type="text" name="courseName" value="Web Design" placeholder="Course name" required>
-            <input type="text" name="courseReason" value="To learn more about front-end development" placeholder="Reason" required>
-        </div>
-          </div>
-        </div>
-        <button type="button" id="addCourse">Add Course</button><br>
-        <label>Quote:
-          <input type="text" name="quote" value="Code is like humor. When you have to explain it, it’s bad." required>
-        </label><br>
-        <label>Quote Author:
-          <input type="text" name="quoteAuthor" value="Cory House" required>
-        </label><br>
-        <label>Funny Thing (optional):
-          <input type="text" name="funnyThing" placeholder="Something funny...">
-        </label><br>
-        <label>Something to Share (optional):
-          <input type="text" name="share" placeholder="Something you'd like to share...">
-        </label>
-      </fieldset>
+            <fieldset>
+                <legend>Main Bullet Points</legend>
+                <label>Personal Background:
+                    <input type="text" name="bullet1" value="Originally from Charlotte, NC" required>
+                </label><br>
+                <label>Professional Background:
+                    <input type="text" name="bullet2" value="Worked as an intern in software development" required>
+                </label><br>
+                <label>Academic Background:
+                    <input type="text" name="bullet3" value="Junior pursuing BS in Computer Science" required>
+                </label><br>
+                <label>Background in this Subject:
+                    <input type="text" name="bullet4" value="Took courses in HTML, CSS, and JavaScript" required>
+                </label><br>
+                <label>Primary Computer Platform:
+                    <input type="text" name="bullet5" value="Windows 11" required>
+                </label><br>
+                <label>Courses Currently Taking:
+                    <div id="courses">
+                        <div class="course">
+                            <input type="text" name="courseDept" value="ITIS" placeholder="Dept" required>
+                            <input type="text" name="courseNum" value="3135" placeholder="Number" required>
+                            <input type="text" name="courseName" value="Web Design" placeholder="Course name" required>
+                            <input type="text" name="courseReason" value="To learn more about front-end development" placeholder="Reason" required>
+                        </div>
+                    </div>
+                    <button type="button" id="addCourse">Add Course</button>
+                </label><br>
+                <label>Quote:
+                    <input type="text" name="quote" value="Code is like humor. When you have to explain it, it’s bad." required>
+                </label><br>
+                <label>Quote Author:
+                    <input type="text" name="quoteAuthor" value="Cory House" required>
+                </label><br>
+                <label>Funny Thing (optional):
+                    <input type="text" name="funnyThing" placeholder="Something funny...">
+                </label><br>
+                <label>Something to Share (optional):
+                    <input type="text" name="share" placeholder="Something you'd like to share...">
+                </label>
+            </fieldset>
 
-      <fieldset>
-        <legend>Links</legend>
-        <label>LinkedIn:
-          <input type="url" name="link1" value="https://linkedin.com/in/johndoe" placeholder="https://...">
-        </label><br>
-        <label>GitHub:
-          <input type="url" name="link2" value="https://github.com/johndoe" placeholder="https://...">
-        </label><br>
-        <label>Personal Site:
-          <input type="url" name="link3" value="https://johndoe.dev" placeholder="https://...">
-        <label>Portfolio:
-          <input type="url" name="link4" value="https://yourportfolio.com" placeholder="Enter your portfolio link">
-        </label><br>
-        <label>Other Link:
-          <input type="url" name="link5" value="https://yourlink.com" placeholder="https://...">
-        </label> type="url" name="link5" placeholder="https://...">
-        </label>
-      </fieldset>
+            <fieldset>
+                <legend>Links</legend>
+                <label>LinkedIn:
+                    <input type="url" name="link1" value="https://linkedin.com/in/johndoe" placeholder="https://...">
+                </label><br>
+                <label>GitHub:
+                    <input type="url" name="link2" value="https://github.com/johndoe" placeholder="https://...">
+                </label><br>
+                <label>Personal Site:
+                    <input type="url" name="link3" value="https://johndoe.dev" placeholder="https://...">
+                </label><br>
+                <label>Portfolio:
+                    <input type="url" name="link4" placeholder="https://...">
+                </label><br>
+                <label>Other Link:
+                    <input type="url" name="link5" placeholder="https://...">
+                </label>
+            </fieldset>
 
-      <div class="buttons">
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-        <button type="button" id="clearBtn">Clear</button>
-        <script>
-          document.getElementById('clearBtn').addEventListener('click', function() {
-            document.getElementById('introForm').reset();
-          });
-        </script>
-      </div>
-    </form>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button" id="clearBtn">Clear</button>
+            </div>
+        </form>
 
-    <section id="result">
-      <h2>Submission Result</h2>
-    </section>
-  </main>
+        <section id="result"></section>
+    </main>
 
-  <footer id="footer"></footer>
-  <script src="scripts/introduction.js"></script>
+    <footer id="footer"></footer>
+    <script src="scripts/introduction.js"></script>
 </body>
 </html>
+
