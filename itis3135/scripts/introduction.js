@@ -5,11 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = document.getElementById("result");
     const coursesContainer = document.getElementById("courses");
   
+
     // Build result section dynamically
     function displayResult() {
       const data = Object.fromEntries(new FormData(form).entries());
       const courseElements = coursesContainer.querySelectorAll(".course");
-      const courses = Array.from(courseElements).map(c => {
+      const courses = Array.from(courseElements).map((c) => {
         const [dept, num, name, reason] = Array.from(c.querySelectorAll("input")).map(i => i.value);
         return `<li><strong>${dept} ${num} - ${name}:</strong> ${reason}</li>`;
       });
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Clear button (empties all fields)
     clearBtn.addEventListener("click", () => {
-      Array.from(form.querySelectorAll("input, textarea")).forEach(el => el.value = "");
+        Array.from(form.querySelectorAll("input, textarea")).forEach((el) => el.value = "");
     });
   
     // Build result section dynamically
@@ -79,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Links:</strong></p>
         <ul>
           ${[data.link1, data.link2, data.link3, data.link4, data.link5]
-            .filter(l => l)
-            .map(l => `<li><a href="${l}" target="_blank">${l}</a></li>`).join("")}
+            .filter((l) => l)
+            .map((l) => `<li><a href="${l}" target="_blank">${l}</a></li>`).join("")}
         </ul>
         <button id="resetResult">Reset</button>
       `;
