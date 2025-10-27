@@ -67,7 +67,6 @@
                 <legend>Personal Statement</legend>
                 <textarea name="personalStatement" rows="4" required></textarea>
 I am a Computer Science major who enjoys learning about web development and UI design.
-                </textarea>
             </fieldset>
 
             <!-- MAIN BULLETS -->
@@ -164,7 +163,7 @@ I am a Computer Science major who enjoys learning about web development and UI d
     <script>
         if (typeof document.createElement('input').type !== 'date') {
             const dateInputs = document.querySelectorAll('input[type="date"]');
-            dateInputs.forEach(input => {
+            dateInputs.forEach((input) => {
                 input.type = 'text';
                 input.placeholder = 'YYYY-MM-DD';
             });
