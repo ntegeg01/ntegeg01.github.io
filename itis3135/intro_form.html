@@ -34,18 +34,16 @@
                     <input type="text" name="ackStatement" value="I certify that this is my own work." required>
                 </label><br>
                 <label for="ackDate">Acknowledgment Date*:</label>
-                <input type="date" id="ackDate" name="ackDate" value="2025-10-25" required>
+<input type="text" id="ackDate" name="ackDate" value="2025-10-25" required>
 
-                <!-- Polyfill -->
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-                <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        if (!('showPicker' in HTMLInputElement.prototype)) { // if no native datepicker support
-                            new Pikaday({ field: document.getElementById('ackDate') });
-                        }
-                    });
-                </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Pikaday({ field: document.getElementById('ackDate') });
+  });
+</script>
+
             </fieldset>
 
             <!-- MASCOT INFO -->
