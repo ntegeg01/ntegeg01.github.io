@@ -1,7 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("introForm");
     const resultSection = document.getElementById("result");
     const h2 = document.querySelector("h2");
+
+    // Function to escape HTML special characters for display
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, function (char) {
+            switch (char) {
+                case "&": return "&amp;";
+                case "<": return "&lt;";
+                case ">": return "&gt;";
+                case "'": return "&#39;";
+                case '"': return "&quot;";
+                default: return char;
+            }
+        });
+    }
 
     // Create "Generate HTML" button
     const generateBtn = document.createElement("button");
@@ -10,12 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
     generateBtn.id = "generateHTMLBtn";
     document.querySelector(".buttons").appendChild(generateBtn);
 
-    generateBtn.addEventListener("click", () => {
+    generateBtn.addEventListener("click", function () {
         const formData = new FormData(form);
 
         // Build HTML string
-        const fullName = `${formData.get("firstName")} ${formData.get("middleName") ? formData.get("middleName") + " " : ""}"${formData.get("nickname")}" ${formData.get("lastName")}`;
-        const mascot = `${formData.get("mascotAdj")} ${formData.get("mascotAnimal")}`;
+        const fullName =
+            formData.get("firstName") + " " +
+            (formData.get("middleName") ? formData.get("middleName") + " " : "") +
+            '"' + formData.get("nickname") + '" ' +
+            formData.get("lastName");
+
+        const mascot = formData.get("mascotAdj") + " " + formData.get("mascotAnimal");
         const divider = formData.get("divider") || "~";
 
         let html = `
@@ -35,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h4>Courses Currently Taking</h4>
 <ul>`;
 
-        // Gather multiple courses (if more than one added)
+        // Gather multiple courses
         const courseDepts = formData.getAll("courseDept");
         const courseNums = formData.getAll("courseNum");
         const courseNames = formData.getAll("courseName");
@@ -48,9 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         html += `
 </ul>
-<p><em>“${formData.get("quote")}”</em> — ${formData.get("quoteAuthor")}</p>
-${formData.get("funnyThing") ? `<p><strong>Funny Thing:</strong> ${formData.get("funnyThing")}</p>` : ""}
-${formData.get("share") ? `<p><strong>Something to Share:</strong> ${formData.get("share")}</p>` : ""}
+<p><em>“${formData.get("quote")}”</em> — ${formData.get("quoteAuthor")}</p>`;
+
+        if (formData.get("funnyThing")) {
+            html += `<p><strong>Funny Thing:</strong> ${formData.get("funnyThing")}</p>`;
+        }
+
+        if (formData.get("share")) {
+            html += `<p><strong>Something to Share:</strong> ${formData.get("share")}</p>`;
+        }
+
+        html += `
 <h4>Links</h4>
 <ul>`;
 
@@ -59,16 +86,18 @@ ${formData.get("share") ? `<p><strong>Something to Share:</strong> ${formData.ge
             { name: "GitHub", value: formData.get("link2") },
             { name: "Personal Site", value: formData.get("link3") },
             { name: "Portfolio", value: formData.get("link4") },
-            { name: "Other Link", value: formData.get("link5") },
+            { name: "Other Link", value: formData.get("link5") }
         ];
 
-        links.forEach(link => {
-            if (link.value) html += `<li><a href="${link.value}" target="_blank">${link.name}</a></li>`;
+        links.forEach(function (link) {
+            if (link.value) {
+                html += `<li><a href="${link.value}" target="_blank">${link.name}</a></li>`;
+            }
         });
 
         html += "</ul>";
 
-        // Replace form with the HTML code block
+        // Replace form with highlighted HTML
         h2.textContent = "Introduction HTML";
         form.style.display = "none";
 
@@ -78,24 +107,13 @@ ${formData.get("share") ? `<p><strong>Something to Share:</strong> ${formData.ge
     <pre><code class="language-html">${escapeHTML(html)}</code></pre>
 </section>`;
 
-        // Re-highlight code using Highlight.js
+        // Highlight.js support
         if (window.hljs) {
-            document.querySelectorAll("pre code").forEach(el => {
+            document.querySelectorAll("pre code").forEach(function (el) {
                 hljs.highlightElement(el);
             });
         }
     });
-
-    // Function to escape HTML special characters for display
-    function escapeHTML(str) {
-        return str.replace(/[&<>'"]/g, (char) => {
-            switch (char) {
-                case "&": return "&amp;";
-                case "<": return "&lt;";
-                case ">": return "&gt;";
-                case "'": return "&#39;";
-                case '"': return "&quot;";
-            }
-        });
-    }
 });
+
+
