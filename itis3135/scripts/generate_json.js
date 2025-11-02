@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultSection = document.getElementById("result");
     const h2 = document.querySelector("h2");
 
-
     function escapeHTML(str) {
         return str.replace(/[&<>'"]/g, function (char) {
             switch (char) {
@@ -71,8 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { name: "Portfolio", href: formData.get("link4") },
             { name: "Other Link", href: formData.get("link5") }
         ];
-
-        links.forEach(link => {
+        links.forEach((link) => {
             if (link.href) jsonData.links.push(link);
         });
 
@@ -91,10 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Re-highlight JSON with Highlight.js
         if (window.hljs) {
-            document.querySelectorAll("pre code").forEach(el => {
+            document.querySelectorAll("pre code").forEach((el) => {
                 hljs.highlightElement(el);
             });
         }
-    });
-});
+    }); // ✅ closes the click event listener
+}); // ✅ closes the DOMContentLoaded event listener
 
