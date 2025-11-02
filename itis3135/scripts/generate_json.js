@@ -3,6 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultSection = document.getElementById("result");
     const h2 = document.querySelector("h2");
 
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, function (char) {
+            switch (char) {
+                case "&": return "&amp;";
+                case "<": return "&lt;";
+                case ">": return "&gt;";
+                case "'": return "&#39;";
+                case '"': return "&quot;";
+                default: return char;
+            }
+        });
+    }
+
     // Create "Generate JSON" button
     const generateBtn = document.createElement("button");
     generateBtn.type = "button";
@@ -58,10 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
             { name: "Other Link", href: formData.get("link5") }
         ];
 
-        links.forEach(function (link) {
-            if (link.href) {
-                jsonData.links.push(link);
-            }
+        links.forEach(link => {
+            if (link.href) jsonData.links.push(link);
         });
 
         // Convert to formatted JSON string
@@ -79,23 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Re-highlight JSON with Highlight.js
         if (window.hljs) {
-            document.querySelectorAll("pre code").forEach(function (el) {
+            document.querySelectorAll("pre code").forEach(el => {
                 hljs.highlightElement(el);
             });
         }
     });
-
-    // Escape function to display JSON safely
-    function escapeHTML(str) {
-        return str.replace(/[&<>'"]/g, function (char) {
-            switch (char) {
-                case "&": return "&amp;";
-                case "<": return "&lt;";
-                case ">": return "&gt;";
-                case "'": return "&#39;";
-                case '"': return "&quot;";
-                default: return char;
-            }
-        });
-    }
 });
+
