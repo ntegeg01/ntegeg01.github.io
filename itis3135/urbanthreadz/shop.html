@@ -7,33 +7,37 @@
 </head>
 <body>
 
-<header><h1>UrbanThreadz Apparel</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="lookbook.html">Lookbook</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav></header>
-
 <main>
   <h2>Shop The Collection</h2>
 
-  <img src="images/hoodie.jpg" alt="Hoodie">
-  <p><strong>Classic UT Hoodie</strong></p>
+  <input type="text" id="search" placeholder="Search products..." class="search-bar">
 
-  <img src="images/tshirt.jpg" alt="T-Shirt">
-  <p><strong>Signature Graphic Tee</strong></p>
+  <div class="product-grid">
 
-  <img src="images/accessory.jpg" alt="Accessory">
-  <p><strong>Statement Chain</strong></p>
+    <div class="product-card">
+      <img src="images/hoodie.jpg" alt="Hoodie">
+      <p class="product-name">Classic UT Hoodie</p>
+    </div>
 
+    <div class="product-card">
+      <img src="images/tshirt.jpg" alt="T-Shirt">
+      <p class="product-name">Signature Graphic Tee</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/accessory.jpg" alt="Accessory">
+      <p class="product-name">Statement Chain</p>
+    </div>
+
+  </div>
 </main>
 
-<footer> <p>&copy; 2025 UrbanThreadz Apparel</p>
-    <p><a href="https://validator.w3.org/">HTML Validator</a> | <a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a></p> </footer>
+<!-- JS -->
+<script src="js/header-footer.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/scroll.js"></script>
 
 </body>
 </html>
+

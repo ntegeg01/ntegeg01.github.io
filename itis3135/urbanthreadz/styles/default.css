@@ -87,3 +87,25 @@ body {
     color: #ff4d00;
     text-decoration: none;
   }
+  nav.nav-links {
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .show-menu {
+    right: 0;
+  }
+
+  #scrollTopBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px;
+    background: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  
