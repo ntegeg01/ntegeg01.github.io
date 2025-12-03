@@ -7,38 +7,23 @@
     <title>Nebiyu Tegegne's Notable Tiger || ITIS3135 Home</title>
     <link rel="stylesheet" href="styles/default.css">
 </head>
-<body>
-  <header>
-    <h1>Welcome to My ITIS3135 Site</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="introduction.html">Introduction</a> |
-      <a href="contract.html">Contract</a> |
-      <a href="fccfsjs_outline.html">FFCFSJS Outline</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Home </h2>
-    <p>Welcome! This site is part of my ITIS3135 coursework. Use the navigation above to explore my introduction and contract pages.</p>
-    <p><a href="introduction.html">Go to my Introduction Page →</a></p>
-  </main>
-  <footer>
-    <nav>
-        <a href="https://webpages.uncc.edu/ntegegne/">Charlotte.edu</a> ||
-        <a href="https://github.com/ntegeg01/ntegeg01.github.io">GitHub</a> ||
-        <a href="https://ntegeg01.github.io/itis3135">GitHub.io</a> ||
-        <a href="https://www.freecodecamp.org/neb_t">freeCodeCamp</a> ||
-        <a href="https://www.codecademy.com/profiles/Neb_T">Codecademy</a> ||
-        <a href="https://www.linkedin.com/in/nebiyu-tegegne-53ab8a376/">LinkedIn</a>
-      </nav>
-      
-      <p>
-        Page Built by <a href="https://notabletiger.com">Notable Tiger Enterprises</a> &copy; 2023
-      </p>
-  </footer>
 
-  <footer>
-    <p>© 2025 Your Name | ITIS3135</p>
-  </footer>
+<body>
+
+    <!-- DYNAMIC HEADER -->
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Home</h2>
+        <p>Welcome! This site is part of my ITIS3135 coursework. Use the navigation above to explore my introduction and contract pages.</p>
+        <p><a href="introduction.html">Go to my Introduction Page →</a></p>
+    </main>
+
+    <!-- DYNAMIC FOOTER -->
+    <div data-include="components/footer.html"></div>
+
+    <!-- LOAD THE INCLUDE SCRIPT -->
+    <script src="scripts/HTMLInclude.js"></script>
+
 </body>
 </html>

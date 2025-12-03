@@ -18,140 +18,232 @@
             <!-- BASIC INFO -->
             <fieldset>
                 <legend>Basic Information</legend>
+        
                 <label>First Name*:
-                    <input type="text" name="firstName" value="John" placeholder="Enter first name" required>
+                    <input type="text" name="firstName" value="Nebiyu" required>
                 </label><br>
+        
                 <label>Middle Name / Initial:
-                    <input type="text" name="middleName" placeholder="Enter middle name">
+                    <input type="text" name="middleName" value="">
                 </label><br>
+        
                 <label>Preferred/Nickname:
-                    <input type="text" name="nickname" placeholder="Enter nickname">
+                    <input type="text" name="nickname" value="">
                 </label><br>
+        
                 <label>Last Name*:
-                    <input type="text" name="lastName" value="Doe" placeholder="Enter last name" required>
+                    <input type="text" name="lastName" value="Tegegne" required>
                 </label><br>
+        
                 <label>Acknowledgment Statement*:
-                    <input type="text" name="ackStatement" value="I certify that this is my own work." required>
+                    <input type="text" name="ackStatement" value="I understand this information is public. – NT 11/30/25" required>
                 </label><br>
+        
                 <label for="ackDate">Acknowledgment Date*:</label>
-<input type="text" id="ackDate" name="ackDate" value="2025-10-25" required>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    new Pikaday({ field: document.getElementById('ackDate') });
-  });
-</script>
-
+                <input type="text" id="ackDate" name="ackDate" value="2025-12-01" required>
             </fieldset>
-
+        
             <!-- MASCOT INFO -->
             <fieldset>
                 <legend>Mascot and Theme</legend>
+        
                 <label>Mascot Adjective*:
-                    <input type="text" name="mascotAdj" value="Clever" placeholder="Adjective" required>
+                    <input type="text" name="mascotAdj" value="Notable" required>
                 </label><br>
+        
                 <label>Mascot Animal*:
-                    <input type="text" name="mascotAnimal" value="Fox" placeholder="Animal" required>
+                    <input type="text" name="mascotAnimal" value="Tiger" required>
                 </label><br>
+        
                 <label>Divider Symbol:
-                    <input type="text" name="divider" value="~" placeholder="~ or ♥ etc">
+                    <input type="text" name="divider" value="||">
                 </label>
             </fieldset>
-
+        
             <!-- IMAGE -->
             <fieldset>
                 <legend>Image</legend>
+        
                 <label>Picture:
                     <input type="file" name="picture" accept="image/*">
                 </label><br>
+        
                 <label>Picture Caption:
-                    <input type="text" name="caption" value="John Doe enjoying a sunny day" placeholder="Enter caption">
+                    <input type="text" name="caption" value="Me and my friend out to eat on my birthday">
                 </label>
             </fieldset>
-
+        
             <!-- PERSONAL STATEMENT -->
             <fieldset>
                 <legend>Personal Statement</legend>
-                <textarea name="personalStatement" rows="4" required>I am a Computer Science major who enjoys learning about web development and UI design.</textarea>
+                <textarea name="personalStatement" rows="4" required>
+        Hi everyone! I'm Nebiyu, and this semester I can't wait to learn more about programming and computer systems. I enjoy going deeper into the workings of technology and using what I discover in practical ways. I enjoy football, soccer, and any sports while I'm not in school. My favorite teams are Chelsea, Broncos, Nuggets, Avalanche, and the Rockies sadly.
+                </textarea>
             </fieldset>
-
+        
             <!-- MAIN BULLETS -->
             <fieldset>
                 <legend>Main Bullet Points</legend>
+        
                 <label>Personal Background:
-                    <input type="text" name="bullet1" value="Originally from Charlotte, NC" required>
+                    <input type="text" name="bullet1" value="Ethiopian" required>
                 </label><br>
+        
                 <label>Professional Background:
-                    <input type="text" name="bullet2" value="Worked as an intern in software development" required>
+                    <input type="text" name="bullet2" value="N/A" required>
                 </label><br>
+        
                 <label>Academic Background:
-                    <input type="text" name="bullet3" value="Junior pursuing BS in Computer Science" required>
+                    <input type="text" name="bullet3" value="N/A" required>
                 </label><br>
+        
                 <label>Background in this Subject:
-                    <input type="text" name="bullet4" value="Took courses in HTML, CSS, and JavaScript" required>
+                    <input type="text" name="bullet4" value="N/A" required>
                 </label><br>
+        
                 <label>Primary Computer Platform:
-                    <input type="text" name="bullet5" value="Windows 11" required>
+                    <input type="text" name="bullet5" value="Mac" required>
                 </label><br>
-
-                <!-- FIXED COURSES SECTION -->
+        
+                <!-- COURSES -->
                 <fieldset>
                     <legend>Courses Currently Taking</legend>
+        
                     <div id="courses">
+                        <!-- ITIS 3135 -->
                         <div class="course">
                             <label>Dept:
-                                <input type="text" name="courseDept" value="ITIS" placeholder="Dept" required>
+                                <input type="text" name="courseDept" value="ITIS" required>
                             </label>
                             <label>Number:
-                                <input type="text" name="courseNum" value="3135" placeholder="Number" required>
+                                <input type="text" name="courseNum" value="3135" required>
                             </label>
                             <label>Course Name:
-                                <input type="text" name="courseName" value="Web Design" placeholder="Course name" required>
+                                <input type="text" name="courseName" value="Front-End Web App Development" required>
                             </label>
                             <label>Reason:
-                                <input type="text" name="courseReason" value="To learn more about front-end development" placeholder="Reason" required>
+                                <input type="text" name="courseReason" value="Y" required>
+                            </label>
+                        </div>
+        
+                        <!-- ITIS 3200 -->
+                        <div class="course">
+                            <label>Dept:
+                                <input type="text" name="courseDept" value="ITIS" required>
+                            </label>
+                            <label>Number:
+                                <input type="text" name="courseNum" value="3200-001" required>
+                            </label>
+                            <label>Course Name:
+                                <input type="text" name="courseName" value="Intro to Information Security & Privacy" required>
+                            </label>
+                            <label>Reason:
+                                <input type="text" name="courseReason" value="N/A" required>
+                            </label>
+                        </div>
+        
+                        <!-- ITSC 3146 -->
+                        <div class="course">
+                            <label>Dept:
+                                <input type="text" name="courseDept" value="ITSC" required>
+                            </label>
+                            <label>Number:
+                                <input type="text" name="courseNum" value="3146-101" required>
+                            </label>
+                            <label>Course Name:
+                                <input type="text" name="courseName" value="Intro to Operating Systems & Networking" required>
+                            </label>
+                            <label>Reason:
+                                <input type="text" name="courseReason" value="N/A" required>
+                            </label>
+                        </div>
+        
+                        <!-- LANG 1502 -->
+                        <div class="course">
+                            <label>Dept:
+                                <input type="text" name="courseDept" value="Lang" required>
+                            </label>
+                            <label>Number:
+                                <input type="text" name="courseNum" value="1502-001" required>
+                            </label>
+                            <label>Course Name:
+                                <input type="text" name="courseName" value="Global Arts/Humanities" required>
+                            </label>
+                            <label>Reason:
+                                <input type="text" name="courseReason" value="N/A" required>
+                            </label>
+                        </div>
+        
+                        <!-- MATH 2164 -->
+                        <div class="course">
+                            <label>Dept:
+                                <input type="text" name="courseDept" value="MATH" required>
+                            </label>
+                            <label>Number:
+                                <input type="text" name="courseNum" value="2164-008" required>
+                            </label>
+                            <label>Course Name:
+                                <input type="text" name="courseName" value="Matrices & Linear Algebra" required>
+                            </label>
+                            <label>Reason:
+                                <input type="text" name="courseReason" value="N/A" required>
                             </label>
                         </div>
                     </div>
+        
                     <button type="button" id="addCourse">Add Course</button>
                 </fieldset>
-
+        
                 <label>Quote:
-                    <input type="text" name="quote" value="Code is like humor. When you have to explain it, it’s bad." required>
+                    <input type="text" name="quote" value="&quot;The best way to predict the future is to invent it.&quot;" required>
                 </label><br>
+        
                 <label>Quote Author:
-                    <input type="text" name="quoteAuthor" value="Cory House" required>
+                    <input type="text" name="quoteAuthor" value="Alan Kay" required>
                 </label><br>
+        
                 <label>Funny Thing (optional):
-                    <input type="text" name="funnyThing" placeholder="Something funny...">
+                    <input type="text" name="funnyThing" value="I can drink more coffee in a day than I probably should.">
                 </label><br>
+        
                 <label>Something to Share (optional):
-                    <input type="text" name="share" placeholder="Something you'd like to share...">
+                    <input type="text" name="share" value="">
                 </label>
             </fieldset>
-
+        
             <!-- LINKS -->
             <fieldset>
                 <legend>Links</legend>
-                <label>LinkedIn:
-                    <input type="url" name="link1" value="https://linkedin.com/in/johndoe" placeholder="https://...">
+        
+                <label>UNC Charlotte Page:
+                    <input type="url" name="link1" value="https://webpages.charlotte.edu/ntegegne/">
                 </label><br>
+        
                 <label>GitHub:
-                    <input type="url" name="link2" value="https://github.com/johndoe" placeholder="https://...">
+                    <input type="url" name="link2" value="https://github.com/ntegeg01">
                 </label><br>
-                <label>Personal Site:
-                    <input type="url" name="link3" value="https://johndoe.dev" placeholder="https://...">
+        
+                <label>GitHub.io:
+                    <input type="url" name="link3" value="https://github.com/ntegeg01/ntegeg01.github.io">
                 </label><br>
-                <label>Portfolio:
-                    <input type="url" name="link4" placeholder="https://...">
+        
+                <label>ITIS 3135 Project:
+                    <input type="url" name="link4" value="https://github.com/ntegeg01/ntegeg01.github.io/itis3135/">
                 </label><br>
-                <label>Other Link:
-                    <input type="url" name="link5" placeholder="https://...">
+        
+                <label>freeCodeCamp:
+                    <input type="url" name="link5" value="https://www.freecodecamp.org/neb_t">
+                </label><br>
+        
+                <label>Codecademy:
+                    <input type="url" name="link6" value="https://www.codecademy.com/profiles/Neb_T">
+                </label><br>
+        
+                <label>LinkedIn:
+                    <input type="url" name="link7" value="https://www.linkedin.com/in/nebiyu-tegegne-53ab8a376/">
                 </label>
             </fieldset>
-
+        
             <!-- BUTTONS -->
             <div class="buttons">
                 <button type="submit">Submit</button>
@@ -159,6 +251,7 @@
                 <button type="button" id="clearBtn">Clear</button>
             </div>
         </form>
+        
 
         <section id="result">
             <h4>Submission Result</h4>

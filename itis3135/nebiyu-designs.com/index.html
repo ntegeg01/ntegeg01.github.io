@@ -4,79 +4,237 @@
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Nebiyu Designs | Services</title>
-  <link rel="stylesheet" href="styles/colors.css">
+
+  <!-- Color palette generated with Coolors:
+       https://coolors.co/0b1020-f9fafb-f97316-111827-22c55e
+       link -->
   <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #111827;
+      --text: #f9fafb;
+      --accent: #f97316;
+      --accent-soft: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
     }
+
     header {
       display: flex;
       align-items: center;
-      padding: 1rem;
+      padding: 1.25rem 1.5rem;
+      background-color: var(--surface);
+      border-bottom: 3px solid var(--accent);
     }
+
     header img {
       height: 60px;
       width: 60px;
       margin-right: 1rem;
+      border-radius: 12px;
     }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
     h1 {
       font-size: 2rem;
       margin: 0;
     }
+
+    .tagline {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--accent-soft);
+      font-weight: 600;
+    }
+
     main {
-      padding: 2rem;
+      padding: 2rem 1.5rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    ul {
-      list-style-type: circle;
-      padding-left: 1.5rem;
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.25rem;
     }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      font-weight: 600;
+    }
+
+    .services-list {
+      list-style: none; /* remove default bullets */
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .services-list li {
+      margin-bottom: 0.35rem;
+      padding-left: 1.75rem;
+      position: relative;
+    }
+
+    .services-list li::before {
+      content: "◆"; /* non-standard bullet */
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
     address {
       font-style: normal;
-      padding: 1rem;
-      margin: 1rem 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0 0;
+      background-color: var(--surface);
+      border-left: 4px solid var(--accent-soft);
+      border-radius: 8px;
     }
+
+    address a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    address a:hover,
+    address a:focus {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.25rem 1rem 1.75rem;
       margin-top: 2rem;
+      background-color: var(--surface);
+      border-top: 3px solid var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .footer-nav,
+    .footer-tools {
+      margin: 0.25rem 0;
+    }
+
+    .footer-nav a,
+    .footer-tools a {
+      color: var(--accent-soft);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .footer-nav a:hover,
+    .footer-tools a:hover,
+    .footer-nav a:focus,
+    .footer-tools a:focus {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      main {
+        padding: 1.5rem 1rem 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="images/logo.png" alt="Minimalist logo representing Nebiyu Designs">
-    <h1>Nebiyu Designs</h1>
+    <div class="brand-block">
+      <h1>Nebiyu Designs</h1>
+      <p class="tagline">Designing with purpose, coding with passion.</p>
+    </div>
   </header>
+
   <main>
     <h2>Services</h2>
-    <p>At Nebiyu Designs, we create modern, professional, and user-friendly websites that help brands stand out online. Our goal is to make the web accessible, beautiful, and functional for everyone.</p>
-    
-    <ul>
-      <li>Clean, responsive web design</li>
-      <li>Fast, mobile-first development</li>
-      <li>Accessibility-focused solutions</li>
-      <li>Creative branding and logo design</li>
-      <li>SEO-optimized builds</li>
-      <li>Custom features for client needs</li>
-      <li>Secure, scalable coding practices</li>
+
+    <p>
+      At <span class="highlight">Nebiyu Designs</span>, we create modern, professional, and user-friendly websites
+      that help brands stand out online. Every layout, color, and line of code is crafted to be clean, accessible,
+      and easy to maintain.
+    </p>
+
+    <p>
+      Our clients include small businesses, student organizations, and creative professionals who need a web presence
+      that actually works for them. We listen to your goals, translate them into clear design decisions, and build
+      something that feels like your brand — not a generic template.
+    </p>
+
+    <ul class="services-list">
+      <li>Clean, responsive web design for desktop, tablet, and mobile</li>
+      <li>Fast, mobile-first development with performance in mind</li>
+      <li>Accessibility-focused layouts that follow WCAG guidelines</li>
+      <li>Creative branding and logo design support</li>
+      <li>SEO-friendly structure and semantic HTML</li>
+      <li>Custom features tailored to your project needs</li>
+      <li>Secure, scalable coding practices for long-term growth</li>
     </ul>
 
-    <p>We’d love to work with you to build your next digital experience. From personal sites to professional portfolios and business platforms, Nebiyu Designs is ready to bring your ideas to life.</p>
-    
+    <p>
+      Ready to launch a new idea or refresh what you already have? Nebiyu Designs is here to help you build a site
+      that looks sharp, loads fast, and feels right for your audience.
+    </p>
+
     <address>
-      Contact Us:<br>
-      Email: hello@nebiyudesigns.co<br>
-      Phone: (704) 555-2025<br>
+      <strong>Contact Nebiyu Designs</strong><br>
+      Email: <a href="mailto:hello@nebiyudesigns.co">hello@nebiyudesigns.co</a><br>
+      Phone: <a href="tel:17045552025">(704) 555-2025</a><br>
       123 Creative Way, Charlotte, NC 28223
     </address>
   </main>
+
   <footer>
-    <p>© 2025 Nebiyu Designs — "Designing with Purpose, Coding with Passion"</p>
+
+     
+      <a href="index.html">Home</a> 
+      
+    
+
+    <p class="footer-tools">
+      <a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="noopener">
+        HTML Validation
+      </a>
+      |
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener">
+        CSS Validation
+      </a>
+    </p>
+
+    <p>© 2025 Nebiyu Designs — Designing with purpose, coding with passion.</p>
   </footer>
 </body>
 </html>
+
 
