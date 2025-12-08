@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Arial Black', sans-serif;
@@ -13,8 +14,8 @@ header {
   border-bottom: 2px solid #ff4d00;
 }
 
-/* Removed qualified heading - now just h1 */
-h1 {
+/* Use a class instead of qualifying h1 (no header h1) */
+.site-title {
   margin: 0;
   font-size: 2rem;
   letter-spacing: 2px;
@@ -41,6 +42,15 @@ nav a {
 
 nav a:hover {
   color: #ff4d00;
+}
+
+/* Overqualified selector fixed: just use .nav-links */
+.nav-links {
+  transition: right 0.3s ease-in-out;
+}
+
+.show-menu {
+  right: 0;
 }
 
 /* MAIN */
@@ -88,15 +98,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Removed element qualifier - was nav.nav-links */
-.nav-links {
-  transition: right 0.3s ease-in-out;
-}
-
-.show-menu {
-  right: 0;
-}
-
+/* SCROLL TO TOP BUTTON */
 #scrollTopBtn {
   position: fixed;
   right: 20px;
@@ -110,6 +112,9 @@ footer a {
   display: none;
 }
 
+/* SHOP PAGE */
+
+/* Search bar: box-sizing fixes width+padding/border warnings */
 .search-bar {
   width: 80%;
   max-width: 400px;
@@ -143,7 +148,7 @@ footer a {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-gap: 20px;
+  gap: 20px;
   padding: 0 20px;
 }
 
@@ -152,7 +157,7 @@ footer a {
   padding: 15px;
   border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
