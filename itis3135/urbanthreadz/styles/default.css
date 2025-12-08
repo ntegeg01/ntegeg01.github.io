@@ -118,7 +118,7 @@ footer a {
   display: block;
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* Fixed box-sizing issue */
+  box-sizing: border-box;
 }
 
 .filters {
@@ -143,7 +143,8 @@ footer a {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-gap: 20px; /* Using grid-gap for better compatibility */
+  grid-gap: 20px;
+  padding: 0 20px;
 }
 
 .product-card {
