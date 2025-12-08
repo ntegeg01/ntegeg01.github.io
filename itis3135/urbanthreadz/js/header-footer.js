@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const footerHTML = `
       <footer>
         <p>&copy; 2025 UrbanThreadz Apparel</p>
+        <p>
+        <a href="https://validator.w3.org/">HTML Validator</a> |
+        <a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a>
+        </p>
+
       </footer>
     `;
   

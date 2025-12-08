@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
   <meta charset="UTF-8">
   <title>Shop - UrbanThreadz</title>
   <link rel="stylesheet" href="styles/default.css">
 </head>
 <body>
 
-<main>
-  <h2>Shop The Collection</h2>
-
-  <input type="text" id="search" placeholder="Search products..." class="search-bar">
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="images/hoodie.jpg" alt="Hoodie">
-      <p class="product-name">Classic UT Hoodie</p>
+  <main>
+    <h2>Shop The Collection</h2>
+  
+    <!-- Search Bar -->
+    <input type="text" id="search" placeholder="Search products..." class="search-bar">
+  
+    <!-- Optional Category Filters -->
+    <div class="filters">
+      <button data-category="all">All</button>
+      <button data-category="hoodies">Hoodies</button>
+      <button data-category="tees">T-Shirts</button>
+      <button data-category="accessories">Accessories</button>
+      <button data-category="hats">Hats</button>
     </div>
-
-    <div class="product-card">
-      <img src="images/tshirt.jpg" alt="T-Shirt">
-      <p class="product-name">Signature Graphic Tee</p>
+  
+    <!-- Product Grid -->
+    <div class="product-grid">
+  
+      <!-- Hoodies -->
+      <div class="product-card" data-category="hoodies">
+        <img src="images/hoodie.jpg" alt="Classic Hoodie">
+        <p class="product-name">Classic UT Hoodie</p>
+        <p class="price">$45.00</p>
+      </div>
+  
+      <div class="product-card" data-category="hoodies">
+        <img src="images/hoodie2.jpg" alt="Premium Zip Hoodie">
+        <p class="product-name">Premium Zip Hoodie</p>
+        <p class="price">$60.00</p>
+      </div>
+  
+      <!-- T-Shirts -->
+      <div class="product-card" data-category="tees">
+        <img src="images/tshirt.jpg" alt="Signature Graphic Tee">
+        <p class="product-name">Signature Graphic Tee</p>
+        <p class="price">$25.00</p>
+      </div>
+  
+      <div class="product-card" data-category="tees">
+        <img src="images/tshirt2.jpg" alt="Minimalist Logo Tee">
+        <p class="product-name">Minimalist Logo Tee</p>
+        <p class="price">$22.00</p>
+      </div>
+  
+      <!-- Hats -->
+      <div class="product-card" data-category="hats">
+        <img src="images/hat.jpg" alt="Snapback Hat">
+        <p class="product-name">UrbanThreadz Snapback</p>
+        <p class="price">$28.00</p>
+      </div>
+  
+      <div class="product-card" data-category="hats">
+        <img src="images/hat2.jpg" alt="Dad Hat">
+        <p class="product-name">Everyday Dad Hat</p>
+        <p class="price">$24.00</p>
+      </div>
+  
+      <!-- Accessories -->
+      <div class="product-card" data-category="accessories">
+        <img src="images/accessory.jpg" alt="Statement Chain">
+        <p class="product-name">Statement Chain</p>
+        <p class="price">$18.00</p>
+      </div>
+  
+      <div class="product-card" data-category="accessories">
+        <img src="images/accessory2.jpg" alt="Logo Keychain">
+        <p class="product-name">Logo Keychain</p>
+        <p class="price">$8.00</p>
+      </div>
+  
     </div>
-
-    <div class="product-card">
-      <img src="images/accessory.jpg" alt="Accessory">
-      <p class="product-name">Statement Chain</p>
-    </div>
-
-  </div>
-</main>
+  </main>
+  
 
 <!-- JS -->
 <script src="js/header-footer.js"></script>
